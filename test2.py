@@ -45,7 +45,40 @@ def prepare():
 
     draw_sun()
 
+def aw_man(posx, posy, body_color='blue'):
+    body = Oval(Point(posx - 25, posy + 100), Point(posx + 25, posy))
+    body.setFill(body_color)
 
+    head = Circle(Point(posx, posy - 24), 25)
+    head.setFill('#FFE4C4')
+    head.setOutline('#FFE4C4')
+
+    eye1 = Circle(Point(posx - 10, posy - 26.6), 5)
+    eye1.setFill('white')
+
+    eye2 = Circle(Point(posx + 10, posy - 26.6), 5)
+    eye2.setFill('white')
+
+    mouth = Line(Point(posx + 6, posy - 16), Point(posx - 6, posy - 14))
+    mouth.setWidth(2)
+
+    left_leg = Line(Point(posx - 15, posy + 90), Point(posx - 25, posy + 135))
+    left_leg.setWidth(3)
+
+    right_leg = Line(Point(posx + 15, posy + 90), Point(posx + 25, posy + 135))
+    right_leg.setWidth(3)
+
+
+
+    body.draw(win)
+    head.draw(win)
+    eye1.draw(win)
+    eye2.draw(win)
+    mouth.draw(win)
+    left_leg.draw(win)
+    right_leg.draw(win)
+
+   
 
 def draw_house(left_down_corner, length, height, roof_color='#C6865C', frame_color='#8B1212',
                window_color='#99D9EA', door_color='#C6865C', door_hand_color='black', door_window_orientation=1, door_hand_orientation=1):
@@ -99,7 +132,7 @@ draw_house((900, 170), 70, 50, window_color='#8d0285', door_color='#8d5202', doo
 draw_tree(100, 500)
 
 
-
+aw_man(1000, 500)
 
 
 
